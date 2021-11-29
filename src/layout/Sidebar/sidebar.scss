@@ -1,0 +1,36 @@
+$sidebar-width: 180px;
+$trigger-height: 40px;
+$trigger-short-width: 40px;
+
+#sidebar {
+  position: relative;
+  background-color: var(--sidebar-bg-color);
+  width: $sidebar-width;
+  transition: all 0.3s;
+
+  &.closed {
+    left: -$sidebar-width;
+    width: 0px;
+    margin-right: $trigger-short-width;
+
+    #trigger {
+      width: $trigger-short-width;
+      right: calc(#{-$trigger-short-width} - #{$sidebar-width});
+    }
+  }
+
+  #trigger {
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    height: $trigger-height;
+    border: none;
+  }
+}
+
+// Hide sidebar in mobile view
+@media only screen and (max-width: 768px) {
+  #sidebar {
+    display: none;
+  }
+}

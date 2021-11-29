@@ -1,0 +1,15 @@
+.letter-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--letter-card-bg-color);
+
+  // For highlighting every 3rd card
+  &:nth-child(3n) {
+    background-color: var(--letter-card-3n-bg-color);
+  }
+}
